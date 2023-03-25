@@ -1,7 +1,5 @@
 import "reflect-metadata";
 import { injectable } from "inversify";
-/** disabling this rule as eslint throws error despite AxiosError being used at multiple places. */
-/* eslint-disable-next-line @typescript-eslint/no-unused-vars */
 import type { AxiosInstance } from "axios";
 import type { RequestBody, RequestConfig } from "./types";
 import { IRestClient } from "./IRestClient";
