@@ -22,6 +22,7 @@
     "types": ["reflect-metadata"],
     "experimentalDecorators": true,
     "emitDecoratorMetadata": true,
+    "strictPropertyInitialization": false,
     "outDir": "dist",
     "baseUrl": "src",
     "paths": {
