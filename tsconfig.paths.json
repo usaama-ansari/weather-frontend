@@ -1,0 +1,16 @@
+{
+  "compilerOptions": {
+    "outDir": "dist",
+    "baseUrl": "src",
+    "paths": {
+      "@Components/*": ["components/*"],
+      "@Features/*": ["features/*"],
+      "@Routes": ["routes"],
+      "@Constants/*": ["constants/*"],
+      "@Helpers/*": ["helpers/*"],
+      "@Types": ["types"],
+      "@Config": ["config"],
+      "@Services": ["services"]
+    }
+  }
+}

@@ -22,18 +22,9 @@
     "types": ["reflect-metadata"],
     "experimentalDecorators": true,
     "emitDecoratorMetadata": true,
-    "strictPropertyInitialization": false,
-    "outDir": "dist",
-    "baseUrl": "src",
-    "paths": {
-      "@Components/*": ["components/*"],
-      "@Constants/*": ["constants/*"],
-      "@Helpers/*": ["helpers/*"],
-      "@Types": ["types"],
-      "@Services": ["services"]
-
-    }
+    "strictPropertyInitialization": false
   },
+  "extends": "./tsconfig.paths.json",
   "include": ["src/**/*"],
-  "exclude": ["./node_modules"]
+  "exclude": ["./node_modules"],
 }
