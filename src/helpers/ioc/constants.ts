@@ -1,1 +1,3 @@
-export const TYPES_IOC = {};
+export const TYPES_IOC = {
+  RestClient: Symbol.for("RestClient"),
+};

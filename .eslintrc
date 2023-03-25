@@ -28,6 +28,7 @@
       "JSX": true 
     },
     "rules": {
+      "@typescript-eslint/no-explicit-any": "warn",
       "no-unused-vars": "off", // disable this, so that ts version of this rule can work
       "no-use-before-define": "off", // disable this, so that ts version of this rule can work
       "no-underscore-dangle": "off", // we prefer to have private members preceded with undescore in non class function

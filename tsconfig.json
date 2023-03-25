@@ -27,6 +27,7 @@
     "paths": {
       "@Components/*": ["components/*"],
       "@Constants/*": ["constants/*"],
+      "@Helpers/*": ["helpers/*"],
       "@Types": ["types"]
 
     }
