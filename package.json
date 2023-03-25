@@ -20,7 +20,12 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "lint": "yarn eslint src/",
+    "lint:fix": "yarn eslint --fix src/",
+    "prettier:check": "yarn prettier --check src/",
+    "prettier:fix": "yarn prettier --write src/",
+    "lint:staged": "lint-staged"
   },
   "eslintConfig": {
     "extends": [
