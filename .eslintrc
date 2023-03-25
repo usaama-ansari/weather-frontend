@@ -1,0 +1,66 @@
+{
+    "env": {
+      "browser": true,
+      "es2021": true,
+      "jest": true
+    },
+    "extends": [
+      "plugin:react/recommended",
+      "plugin:@typescript-eslint/recommended",
+      "airbnb",
+      "prettier"
+    ],
+    "parser": "@typescript-eslint/parser",
+    "parserOptions": {
+      "ecmaFeatures": {
+        "jsx": true
+      },
+      "ecmaVersion": 12,
+      "sourceType": "module"
+    },
+    "plugins": ["react", "@typescript-eslint", "react-hooks"],
+    "settings": {
+      "import/resolver": {
+        "typescript": {}
+      }
+    },
+    "globals": {
+      "JSX": true 
+    },
+    "rules": {
+      "no-unused-vars": "off", // disable this, so that ts version of this rule can work
+      "no-use-before-define": "off", // disable this, so that ts version of this rule can work
+      "no-underscore-dangle": "off", // we prefer to have private members preceded with undescore in non class function
+      "@typescript-eslint/no-unused-vars": "error",
+      "@typescript-eslint/no-use-before-define": "error", // ts version of "no-use-before-define"
+      "react/jsx-filename-extension": ["warn", { "extensions": [".tsx"] }], // to force .tsx file name if jsx is present
+      "import/extensions": [
+        "error",
+        "ignorePackages",
+        {
+          // will not show error when following file extentions are ommited in imports
+          "ts": "never",
+          "tsx": "never"
+        }
+      ],
+      "react-hooks/rules-of-hooks": "error",
+      "react-hooks/exhaustive-deps": "warn",
+      "import/prefer-default-export": "off",
+      "react/prop-types": "off", // we already use typescript's types for propTypes
+      "react/jsx-uses-react": "off", // to prevent error on new JSX transform
+      "react/react-in-jsx-scope": "off", // to prevent error on new JSX transform
+      "import/no-extraneous-dependencies": [
+        "error",
+        {
+          "devDependencies": [
+            "**/*.stories.tsx",
+            "**/*.test.tsx",
+            "**/*.test.ts",
+            "**/__mocks__/*.ts",
+            "**/__mocks__/*.tsx"
+          ]
+        }
+      ]
+    }
+  }
+  
