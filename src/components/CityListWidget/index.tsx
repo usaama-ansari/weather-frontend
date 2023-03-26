@@ -9,14 +9,17 @@ type CityListWidgetProps = {
 
 export function CityListWidget({ cities, onCitySelect }: CityListWidgetProps) {
   return (
-    <div>
-      <ul aria-label="cities">
-        {cities.map((city) => (
-          <li onClick={() => onCitySelect(city)} key={city}>
-            {city}
-          </li>
-        ))}
-      </ul>
+    <div className="CityListWidget">
+      <h3>Available Cities</h3>
+      <div className="CityListWidget_inner">
+        <ul className="CityListWidget__list" aria-label="cities">
+          {cities.map((city) => (
+            <li onClick={() => onCitySelect(city)} key={city}>
+              {city}
+            </li>
+          ))}
+        </ul>
+      </div>
     </div>
   );
 }

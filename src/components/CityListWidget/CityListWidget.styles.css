@@ -1,0 +1,38 @@
+.CityListWidget h3 {
+  margin-left: 15px;
+}
+.CityListWidget_inner {
+  margin: auto;
+  max-width: 100%;
+  overflow-y: scroll;
+  border-top: 1px solid black;
+  height: 200px;
+  box-shadow: 4px 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.CityListWidget__list {
+  list-style-type: none;
+  width: 100%;
+  margin: 0px;
+  padding: 0px;
+}
+
+.CityListWidget__list li {
+  padding: 12px 16px;
+  border: 1px solid rgb(202, 202, 202);
+  border-bottom: 0px;
+  cursor: pointer;
+}
+.CityListWidget__list li:hover {
+  background-color: rgb(221, 221, 221);
+}
+
+.CityListWidget__list li:last-child {
+  border-bottom: 1px solid rgb(202, 202, 202);
+}
+
+@media only screen and (min-width: 768px) {
+  .CityListWidget_inner {
+    max-width: 70%;
+  }
+}

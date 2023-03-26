@@ -8,7 +8,15 @@ function CityListPage() {
   return (
     <div>
       <CityListWidget
-        cities={["Aligarh", "Delhi", "Agra"]}
+        cities={[
+          "Aligarh",
+          "Delhi",
+          "Agra",
+          "Bangalore",
+          "New York",
+          "Canada",
+          "Lucknow",
+        ]}
         onCitySelect={handleCitySelect}
       />
     </div>
