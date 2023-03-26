@@ -37,7 +37,7 @@ export class WeatherService implements IWeatherService {
           city: cityName,
         },
       });
-      const data: Array<Array<CityWeatherDTO>> = request.data;
+      const data: Array<Array<CityWeatherDTO>> = request.data.weatherData;
       return Result.ok(data);
     } catch (err) {
       return Result.fail(err as RequestError);

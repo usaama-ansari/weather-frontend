@@ -6,28 +6,24 @@ import {
 import MockAdapter from "axios-mock-adapter/types";
 
 export const mockHandlers = function (mockServer: MockAdapter) {
-  mockServer.onGet(CITIES_API_PATH).reply(200, {
-    data: ["Aligarh", "Delhi", "Agra"],
-  });
+  mockServer.onGet(CITIES_API_PATH).reply(200, ["Aligarh", "Delhi", "Agra"]);
 
   mockServer.onGet(CITY_CURRENT_WEATHER_API_PATH).reply(200, {
-    data: {
-      cityName: "Aligarh",
-      country: "IN",
-      date: new Date(),
-      coordinates: {
-        lat: 34,
-        lon: 55,
-      },
-      temperature: "45",
-      humidity: "60",
-      pressure: "100",
-      weather: {
-        type: "Cloudy",
-        desc: "Cloudy weather",
-      },
-      windSpeed: "30mph",
+    cityName: "Aligarh",
+    country: "IN",
+    date: new Date(),
+    coordinates: {
+      lat: 34,
+      lon: 55,
     },
+    temperature: "45",
+    humidity: "60",
+    pressure: "100",
+    weather: {
+      type: "Cloudy",
+      desc: "Cloudy weather",
+    },
+    windSpeed: "30mph",
   });
 
   const singleDayData = Array(8)
@@ -51,7 +47,7 @@ export const mockHandlers = function (mockServer: MockAdapter) {
     }));
 
   mockServer.onGet(CITY_5_DAYS_FORECAST_API_PATH).reply(200, {
-    data: [
+    weatherData: [
       [...singleDayData],
       [...singleDayData],
       [...singleDayData],

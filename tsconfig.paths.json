@@ -6,6 +6,7 @@
       "@Components/*": ["components/*"],
       "@Features/*": ["features/*"],
       "@Routes": ["routes"],
+      "@Context/*": ["context/*"],
       "@Constants/*": ["constants/*"],
       "@Helpers/*": ["helpers/*"],
       "@Types": ["types"],

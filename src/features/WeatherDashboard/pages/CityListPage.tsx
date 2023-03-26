@@ -1,27 +1,32 @@
+import { useContext, useEffect } from "react";
 import { CityListWidget } from "@Components/CityListWidget";
 import { WeatherDataWidget } from "@Components/WeatherDataWidget";
+import { WeatherContext } from "@Context/weatherContext";
 
 function CityListPage() {
+  const {
+    getCitiesList,
+    fetchCityWeather,
+    currentWeather,
+    forecastedWeather,
+    cities,
+  } = useContext(WeatherContext);
+
+  useEffect(() => {
+    getCitiesList();
+  }, []);
+
   const handleCitySelect = (city: string) => {
-    console.log(city);
+    fetchCityWeather(city);
   };
 
   return (
     <div>
-      <CityListWidget
-        cities={[
-          "Aligarh",
-          "Delhi",
-          "Agra",
-          "Bangalore",
-          "New York",
-          "Canada",
-          "Lucknow",
-        ]}
-        onCitySelect={handleCitySelect}
-      />
+      <CityListWidget cities={cities} onCitySelect={handleCitySelect} />
       <div style={{ marginTop: "50px" }}>
-        <WeatherDataWidget data={{ name: "hello" }} />
+        {forecastedWeather.length && currentWeather && (
+          <WeatherDataWidget data={{ currentWeather, forecastedWeather }} />
+        )}
       </div>
     </div>
   );
