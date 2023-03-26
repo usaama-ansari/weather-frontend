@@ -1,6 +1,8 @@
 /* eslint-disable jsx-a11y/click-events-have-key-events, jsx-a11y/no-noninteractive-element-interactions, jsx-a11y/no-static-element-interactions */
 
 import { useState } from "react";
+import { CurrentData } from "./CurrentData";
+import { ForecastData } from "./ForecastData";
 import "./WeatherDataWidget.styles.css";
 
 type WeatherDataWidgetProps = {
@@ -40,8 +42,8 @@ export function WeatherDataWidget(props: WeatherDataWidgetProps) {
         </div>
 
         <div className="WeatherDataWidget__body">
-          {tab === 0 && <div>First tab</div>}
-          {tab === 1 && <div>Second Tab</div>}
+          {tab === 0 && <CurrentData data={{ cityName: "Aligarh" }} />}
+          {tab === 1 && <ForecastData data={{ cityName: "Aligarh" }} />}
         </div>
       </div>
     </div>
