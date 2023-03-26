@@ -1,8 +1,8 @@
 /* eslint-disable jsx-a11y/click-events-have-key-events, jsx-a11y/no-noninteractive-element-interactions, jsx-a11y/no-static-element-interactions */
 
 import { useState } from "react";
-import { CurrentData } from "./CurrentData";
-import { ForecastData } from "./ForecastData";
+import { CurrentWeather } from "./CurrentWeather";
+import { ForecastWeather } from "./ForecastWeather";
 import "./WeatherDataWidget.styles.css";
 
 type WeatherDataWidgetProps = {
@@ -13,7 +13,7 @@ export function WeatherDataWidget(props: WeatherDataWidgetProps) {
   const [tab, setTab] = useState(0);
 
   const { data } = props;
-  console.log(data);
+  const { currentWeather, forecastedWeather } = data;
 
   const handleTabClick = function (selectedTab: number) {
     if (selectedTab !== tab) setTab(selectedTab);
@@ -42,8 +42,8 @@ export function WeatherDataWidget(props: WeatherDataWidgetProps) {
         </div>
 
         <div className="WeatherDataWidget__body">
-          {tab === 0 && <CurrentData data={{ cityName: "Aligarh" }} />}
-          {tab === 1 && <ForecastData data={{ cityName: "Aligarh" }} />}
+          {tab === 0 && <CurrentWeather data={currentWeather} />}
+          {tab === 1 && <ForecastWeather data={forecastedWeather} />}
         </div>
       </div>
     </div>

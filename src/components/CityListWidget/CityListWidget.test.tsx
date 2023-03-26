@@ -8,7 +8,13 @@ describe("CityListWidget", () => {
   const cities = ["Delhi", "Aligarh", "Agra"];
 
   it("Should render correct number of cities in a list", async () => {
-    render(<CityListWidget onCitySelect={jest.fn()} cities={cities} />);
+    render(
+      <CityListWidget
+        selectedCity=""
+        onCitySelect={jest.fn()}
+        cities={cities}
+      />,
+    );
     const list = screen.getByRole("list", {
       name: /cities/i,
     });
@@ -19,7 +25,9 @@ describe("CityListWidget", () => {
 
   it("Should select correct city on list item click", async () => {
     const handler = jest.fn();
-    render(<CityListWidget onCitySelect={handler} cities={cities} />);
+    render(
+      <CityListWidget selectedCity="" onCitySelect={handler} cities={cities} />,
+    );
     const list = screen.getByRole("list", {
       name: /cities/i,
     });

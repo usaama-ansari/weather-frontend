@@ -31,6 +31,10 @@
   border-bottom: 1px solid rgb(202, 202, 202);
 }
 
+.CityListWidget__list li.selected {
+  background-color: rgb(221, 221, 221);
+}
+
 @media only screen and (min-width: 768px) {
   .CityListWidget_inner {
     max-width: 70%;

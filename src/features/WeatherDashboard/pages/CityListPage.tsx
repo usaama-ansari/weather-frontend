@@ -9,6 +9,8 @@ function CityListPage() {
     fetchCityWeather,
     currentWeather,
     forecastedWeather,
+    selectedCity,
+    selectCity,
     cities,
   } = useContext(WeatherContext);
 
@@ -18,11 +20,16 @@ function CityListPage() {
 
   const handleCitySelect = (city: string) => {
     fetchCityWeather(city);
+    selectCity(city);
   };
 
   return (
     <div>
-      <CityListWidget cities={cities} onCitySelect={handleCitySelect} />
+      <CityListWidget
+        cities={cities}
+        onCitySelect={handleCitySelect}
+        selectedCity={selectedCity}
+      />
       <div style={{ marginTop: "50px" }}>
         {forecastedWeather.length && currentWeather && (
           <WeatherDataWidget data={{ currentWeather, forecastedWeather }} />
