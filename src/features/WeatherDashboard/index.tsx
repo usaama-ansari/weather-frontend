@@ -12,7 +12,6 @@ function WeatherDashboard() {
 
   const fetchCities = useCallback(async () => {
     const weather = await weatherService.fetchCityFiveDaysForecast("Aligarh");
-
     console.log(weather);
   }, [cityService, weatherService]);
 
