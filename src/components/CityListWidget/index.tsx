@@ -7,10 +7,7 @@ type CityListWidgetProps = {
   onCitySelect: (cityName: string) => void;
 };
 
-export function CityListWidget({
-  cities,
-  onCitySelect,
-}: CityListWidgetProps) {
+export function CityListWidget({ cities, onCitySelect }: CityListWidgetProps) {
   return (
     <div>
       <ul aria-label="cities">
