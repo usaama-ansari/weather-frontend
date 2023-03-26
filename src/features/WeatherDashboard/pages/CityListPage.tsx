@@ -11,16 +11,18 @@ function CityListPage() {
     forecastedWeather,
     selectedCity,
     selectCity,
+    clearWeatherData,
     cities,
   } = useContext(WeatherContext);
 
   useEffect(() => {
+    selectCity();
+    clearWeatherData();
     getCitiesList();
   }, []);
 
   const handleCitySelect = (city: string) => {
     fetchCityWeather(city);
-    selectCity(city);
   };
 
   return (
@@ -31,9 +33,15 @@ function CityListPage() {
         selectedCity={selectedCity}
       />
       <div style={{ marginTop: "50px" }}>
-        <h3 style={{ marginLeft: "10px" }}>{selectedCity}</h3>
-        {forecastedWeather.length && currentWeather && (
+        {selectedCity && (
+          <h3
+            style={{ marginLeft: "10px" }}
+          >{`${selectedCity} Weather Forecast`}</h3>
+        )}
+        {forecastedWeather.length && currentWeather ? (
           <WeatherDataWidget data={{ currentWeather, forecastedWeather }} />
+        ) : (
+          ""
         )}
       </div>
     </div>

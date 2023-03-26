@@ -15,7 +15,7 @@ export function WeatherProvider(props: { children: React.ReactElement }) {
     Array<Array<CityWeatherDTO>>
   >([]);
   const [cities, setCities] = useState<string[]>([]);
-  const [selectedCity, setSelectedCity] = useState<string | null>();
+  const [selectedCity, setSelectedCity] = useState<string>("");
 
   const cityService = useInjection<ICityService>(TYPES_IOC.CityService);
   const weatherService = useInjection<IWeatherService>(
@@ -43,6 +43,7 @@ export function WeatherProvider(props: { children: React.ReactElement }) {
       setForecastedWeather(
         forecastWeather.getValue() as Array<Array<CityWeatherDTO>>,
       );
+      selectCity(city);
     } else {
       console.log("Error in fetching weather data");
     }
@@ -68,11 +69,17 @@ export function WeatherProvider(props: { children: React.ReactElement }) {
     [selectedCity, setSelectedCity],
   );
 
+  const clearWeatherData = useCallback(() => {
+    setCurrentWeather(null);
+    setForecastedWeather([]);
+  }, []);
+
   const contextValue = {
     currentWeather,
     forecastedWeather,
     cities,
     selectedCity,
+    clearWeatherData,
     fetchCityWeather,
     selectCity,
     fetchCurrentWeather,

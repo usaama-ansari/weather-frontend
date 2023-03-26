@@ -1,12 +1,16 @@
 import {
   CITIES_API_PATH,
   CITY_5_DAYS_FORECAST_API_PATH,
+  CITY_API_PATH,
   CITY_CURRENT_WEATHER_API_PATH,
 } from "@Constants/api";
 import MockAdapter from "axios-mock-adapter/types";
 
 export const mockHandlers = function (mockServer: MockAdapter) {
-  mockServer.onGet(CITIES_API_PATH).reply(200, ["Aligarh", "Delhi", "Agra"]);
+  mockServer.onPost(CITY_API_PATH).reply(200);
+  mockServer
+    .onGet(CITIES_API_PATH)
+    .reply(200, ["Aligarh", "Delhi", "Agra", "New York"]);
 
   mockServer.onGet(CITY_CURRENT_WEATHER_API_PATH).reply(200, {
     cityName: "Aligarh",
