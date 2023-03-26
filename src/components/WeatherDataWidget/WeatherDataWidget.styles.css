@@ -1,0 +1,41 @@
+.WeatherDataWidget {
+  padding: 0px 10px;
+}
+.WeatherDataWidget__inner {
+  margin: auto;
+  max-width: 100%;
+  border: 1px solid grey;
+}
+
+.WeatherDataWidget__header {
+  min-height: 30px;
+  background-color: var(--bg-secondary);
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  color: rgb(182, 182, 182);
+}
+
+.WeatherDataWidget__header div.selected {
+  color: var(--light-text);
+  text-decoration: underline;
+}
+
+.WeatherDataWidget__header div {
+  padding: 10px 10px;
+  cursor: pointer;
+}
+.WeatherDataWidget__header div:hover {
+  background-color: rgb(94, 94, 94);
+}
+
+.WeatherDataWidget__header div:first-child {
+  border-right: 2px solid white;
+}
+
+@media only screen and (min-width: 768px) {
+  .WeatherDataWidget__inner {
+    max-width: 70%;
+    border: 1px solid grey;
+  }
+}

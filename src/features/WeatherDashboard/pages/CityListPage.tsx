@@ -1,4 +1,5 @@
 import { CityListWidget } from "@Components/CityListWidget";
+import { WeatherDataWidget } from "@Components/WeatherDataWidget";
 
 function CityListPage() {
   const handleCitySelect = (city: string) => {
@@ -19,6 +20,9 @@ function CityListPage() {
         ]}
         onCitySelect={handleCitySelect}
       />
+      <div style={{ marginTop: "50px" }}>
+        <WeatherDataWidget data={{ name: "hello" }} />
+      </div>
     </div>
   );
 }
