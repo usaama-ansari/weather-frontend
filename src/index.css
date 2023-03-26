@@ -2,10 +2,13 @@
   --accent: rgb(228, 149, 4);
   --dark-text: black;
   --light-text: white;
+  --bg-primary: rgb(236, 235, 232);
+  --bg-secondary: rgb(54, 54, 54);
 }
 
 body {
   margin: 0;
+  background-color: var(--bg-primary);
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
     "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
     sans-serif;

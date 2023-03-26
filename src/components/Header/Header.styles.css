@@ -21,9 +21,6 @@
     justify-content: flex-start;
   }
 
-  .Header__list {
-    padding-left: 20px;
-  }
   .Header__list li {
     cursor: pointer;
     padding: 8px 12px;
