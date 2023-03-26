@@ -1,7 +1,9 @@
+import { Outlet } from "react-router";
 import { TYPES_IOC } from "@Helpers/ioc/constants";
 import { ICityService, IWeatherService } from "@Services";
 import { useInjection } from "inversify-react";
 import { useCallback, useEffect } from "react";
+import { Header } from "@Components/Header";
 
 function WeatherDashboard() {
   const cityService = useInjection<ICityService>(TYPES_IOC.CityService);
@@ -19,7 +21,12 @@ function WeatherDashboard() {
     fetchCities();
   }, []);
 
-  return <div>Weather Dashboard</div>;
+  return (
+    <div>
+      <Header />
+      <Outlet />
+    </div>
+  );
 }
 
 export default WeatherDashboard;
