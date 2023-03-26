@@ -1,5 +1,5 @@
 .Header {
-  background: rgb(228, 149, 4);
+  background: var(--accent);
   height: 50px;
   display: flex;
   align-items: center;
