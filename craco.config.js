@@ -14,5 +14,5 @@ module.exports = {
            tsConfigPath: "./tsconfig.paths.json"
         }
      }
-  ]
-};
+  ],
+}
