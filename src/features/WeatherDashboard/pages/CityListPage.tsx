@@ -31,6 +31,7 @@ function CityListPage() {
         selectedCity={selectedCity}
       />
       <div style={{ marginTop: "50px" }}>
+        <h3 style={{ marginLeft: "10px" }}>{selectedCity}</h3>
         {forecastedWeather.length && currentWeather && (
           <WeatherDataWidget data={{ currentWeather, forecastedWeather }} />
         )}
