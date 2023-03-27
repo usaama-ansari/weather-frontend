@@ -4,7 +4,7 @@ import { TYPES_IOC } from "@Helpers/ioc/constants";
 import type { IRestClient, RequestError } from "@Helpers/network";
 import { Result } from "@Helpers/Result";
 import { IWeatherService } from "./IWeatherService";
-import { CityWeatherDTO } from "@Types";
+import { CityFiveDaysForecastDTO, CityWeatherDTO } from "@Types";
 import {
   CITY_5_DAYS_FORECAST_API_PATH,
   CITY_CURRENT_WEATHER_API_PATH,
@@ -37,7 +37,7 @@ export class WeatherService implements IWeatherService {
           city: cityName,
         },
       });
-      const data: Array<Array<CityWeatherDTO>> = request.data.weatherData;
+      const data: CityFiveDaysForecastDTO = request.data.weatherData;
       return Result.ok(data);
     } catch (err) {
       return Result.fail(err as RequestError);

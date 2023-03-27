@@ -3,7 +3,7 @@ import React, { useCallback, useState, createContext } from "react";
 import { useInjection } from "inversify-react";
 import { TYPES_IOC } from "@Helpers/ioc/constants";
 import { ICityService, IWeatherService } from "@Services";
-import { CityWeatherDTO } from "@Types";
+import { CityFiveDaysForecastDTO, CityWeatherDTO } from "@Types";
 
 export const WeatherContext = createContext<any>(null);
 
@@ -11,9 +11,8 @@ export function WeatherProvider(props: { children: React.ReactElement }) {
   const [currentWeather, setCurrentWeather] = useState<CityWeatherDTO | null>(
     null,
   );
-  const [forecastedWeather, setForecastedWeather] = useState<
-    Array<Array<CityWeatherDTO>>
-  >([]);
+  const [forecastedWeather, setForecastedWeather] =
+    useState<CityFiveDaysForecastDTO>([]);
   const [cities, setCities] = useState<string[]>([]);
   const [selectedCity, setSelectedCity] = useState<string>("");
 
@@ -41,7 +40,7 @@ export function WeatherProvider(props: { children: React.ReactElement }) {
     if (currentWeather.isSuccess && forecastWeather.isSuccess) {
       setCurrentWeather(currentWeather.getValue() as CityWeatherDTO);
       setForecastedWeather(
-        forecastWeather.getValue() as Array<Array<CityWeatherDTO>>,
+        forecastWeather.getValue() as CityFiveDaysForecastDTO,
       );
       selectCity(city);
     } else {

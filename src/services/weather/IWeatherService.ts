@@ -1,6 +1,6 @@
 import { RequestError } from "@Helpers/network";
 import { Result } from "@Helpers/Result";
-import { CityWeatherDTO } from "@Types";
+import { CityFiveDaysForecastDTO, CityWeatherDTO } from "@Types";
 
 export interface IWeatherService {
   fetchCityCurrentWeather(
@@ -9,5 +9,5 @@ export interface IWeatherService {
 
   fetchCityFiveDaysForecast(
     cityName: string,
-  ): Promise<Result<Array<Array<CityWeatherDTO>> | RequestError>>;
+  ): Promise<Result<CityFiveDaysForecastDTO | RequestError>>;
 }

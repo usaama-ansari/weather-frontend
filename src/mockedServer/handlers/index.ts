@@ -30,33 +30,31 @@ export const mockHandlers = function (mockServer: MockAdapter) {
     windSpeed: "30mph",
   });
 
-  const singleDayData = Array(8)
-    .fill(0)
-    .map(() => ({
-      cityName: "Aligarh",
-      country: "IN",
-      date: new Date(),
-      coordinates: {
-        lat: 34,
-        lon: 55,
-      },
-      temperature: "45",
-      humidity: "60",
-      pressure: "100",
-      weather: {
-        type: "Cloudy",
-        desc: "Cloudy weather",
-      },
-      windSpeed: "30mph",
-    }));
+  const singleDayData = {
+    cityName: "Aligarh",
+    country: "IN",
+    date: new Date(),
+    coordinates: {
+      lat: 34,
+      lon: 55,
+    },
+    temperature: "45",
+    humidity: "60",
+    pressure: "100",
+    weather: {
+      type: "Cloudy",
+      desc: "Cloudy weather",
+    },
+    windSpeed: "30mph",
+  };
 
   mockServer.onGet(CITY_5_DAYS_FORECAST_API_PATH).reply(200, {
     weatherData: [
-      [...singleDayData],
-      [...singleDayData],
-      [...singleDayData],
-      [...singleDayData],
-      [...singleDayData],
+      singleDayData,
+      singleDayData,
+      singleDayData,
+      singleDayData,
+      singleDayData,
     ],
   });
 };

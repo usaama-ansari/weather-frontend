@@ -20,3 +20,5 @@ export type CityWeatherDTO = {
   };
   windSpeed: string;
 };
+
+export type CityFiveDaysForecastDTO = Array<CityWeatherDTO>;
