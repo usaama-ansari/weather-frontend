@@ -37,8 +37,7 @@
     "lint:fix": "yarn eslint --fix src/",
     "prettier:check": "yarn prettier --check src/",
     "prettier:fix": "yarn prettier --write src/",
-    "lint:staged": "lint-staged",
-    "postinstall": "husky install"
+    "lint:staged": "lint-staged"
   },
   "eslintConfig": {
     "extends": [
