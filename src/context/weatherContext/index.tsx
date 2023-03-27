@@ -48,19 +48,6 @@ export function WeatherProvider(props: { children: React.ReactElement }) {
     }
   }, []);
 
-  const fetchCurrentWeather = useCallback(
-    async (city: string) => {
-      const result = await weatherService.fetchCityCurrentWeather(city);
-      if (result.isSuccess) {
-        const weather = result.getValue() as CityWeatherDTO;
-        setCurrentWeather(weather);
-      } else {
-        console.log(result.getValue());
-      }
-    },
-    [weatherService, setCurrentWeather],
-  );
-
   const selectCity = useCallback(
     (city: string) => {
       if (selectedCity != city) setSelectedCity(city);
@@ -81,7 +68,6 @@ export function WeatherProvider(props: { children: React.ReactElement }) {
     clearWeatherData,
     fetchCityWeather,
     selectCity,
-    fetchCurrentWeather,
     getCitiesList,
   };
 

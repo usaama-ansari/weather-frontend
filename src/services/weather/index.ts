@@ -22,7 +22,6 @@ export class WeatherService implements IWeatherService {
           city: cityName,
         },
       });
-      // TODO: use data mapper for weather data
       const data: CityWeatherDTO = request.data;
       return Result.ok(data);
     } catch (err) {
@@ -37,7 +36,7 @@ export class WeatherService implements IWeatherService {
           city: cityName,
         },
       });
-      const data: CityFiveDaysForecastDTO = request.data.weatherData;
+      const data: CityFiveDaysForecastDTO = request.data;
       return Result.ok(data);
     } catch (err) {
       return Result.fail(err as RequestError);
