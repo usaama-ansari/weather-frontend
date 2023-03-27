@@ -13,7 +13,14 @@
    - **Yarn** version 3.1.1. See [this](https://yarnpkg.com/getting-started/install) to install **Yarn** in your system.
    - **NODE JS** version 18.12.0 | [Node installation guide](https://www.digitalocean.com/community/tutorials/how-to-install-node-js-on-ubuntu-22-04)
    - **React.js** framework version 18.2.0 (created via create-react-app utility)
-   
+  
+ #### Best Practices adopted
+- BDD style functional tests (only limited components have been tested for time constraints)
+- Pre-commit hook via husky and lint-staged
+- prettier
+- editorconfig
+- eslint
+- Dependency Injection via inversify
 # Installation
 
 ##### Install Node version v18.12.0
