@@ -30,14 +30,15 @@
   },
   "scripts": {
     "start": "craco start start",
-    "build": "react-scripts build",
+    "build": "craco build",
     "test": "craco test",
     "eject": "react-scripts eject",
     "lint": "yarn eslint src/",
     "lint:fix": "yarn eslint --fix src/",
     "prettier:check": "yarn prettier --check src/",
     "prettier:fix": "yarn prettier --write src/",
-    "lint:staged": "lint-staged"
+    "lint:staged": "lint-staged",
+    "postinstall": "husky install"
   },
   "eslintConfig": {
     "extends": [
